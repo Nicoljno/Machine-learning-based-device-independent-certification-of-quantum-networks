@@ -20,6 +20,9 @@ import pandas as pd
 import pickle
 import sys
 
+
+#function that evaluates the expected value of given input operators
+#inputs: probability distribution 'p', operator 'operator', parties involved 'parties', inputs per party 'inputs'
 def expected_value(p, operator, parties, inputs):
     n=2
     suffix_operators={}
@@ -43,6 +46,9 @@ def expected_value(p, operator, parties, inputs):
         e_value+=(-1)**(coeff)*p[suffix+i]
     return e_value
 
+#function that enforce the causal independence condition
+#inputs: prediction of the NN 'y_pred', train samples 'train', operator 'operator', inputs 'inputs',
+#dictionaries of non measurable elements 'non_mes_diz', elements involving causal independence contraints 'indep_cons_diz', non measurable elements 'non_mes_element
 def causal_indep_prod(y_pred, train, operator, parties, inputs, mes_diz, non_mes_diz, indep_cons_diz, non_mes_element):
     prod=list(operator.split('*'))
     tmp=1.
