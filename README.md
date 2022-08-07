@@ -1,4 +1,4 @@
-> #### This repository contains the python codes used in the paper **Machine-learning-based device-independent certification of quantum networks**
+> ##### This repository contains the python codes used in the paper **Machine-learning-based device-independent certification of quantum networks**
 > 
 > In detail the codes presented are:
 >
